@@ -1,0 +1,15 @@
+{
+  "name": "my_electron_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "electron": "^16.0.8"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container">
+    <h1 class="text-center">Ana Sayfa</h1>
+    <input type="text" id="value">
+    <button class="btn btn-primary" id="sendBtn">Gönder</button>
+    <button id="openNewBtn">Yeni Bir Pencere Aç</button>
+</div>
+    <script>
+     
+         const electron = require("electron");
+         const { ipcRenderer } = electron;
+
+         let sendBtn = document.getElementById("sendBtn");
+         let inputValue = document.getElementById("value");
+         let openNew = document.querySelector("#openNewBtn");
+
+         openNew.addEventListener("click", () => {
+             ipcRenderer.send("key:newWindow")
+         })
+         sendBtn.addEventListener("click", () => {
+             //ipcRenderer.send("key","Nur - Electron.js ")
+             ipcRenderer.send("key:inputValue",inputValue.value)
+         })
+
+     </script>
+ 
+       
+     
+</body>
+</html>
